@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 - Responsive Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Mobile First Approach */
+        .content {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Animation for smooth transitions */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: #ffcccb;
+                color: #333;
+            }
+            .content::before {
+                content: "Mobile View";
+                display: block;
+                font-size: 1.5em;
+                margin-bottom: 20px;
+                animation: fadeIn 0.5s ease-in;
+            }
+            .content p {
+                content: "This is optimized for mobile devices. The layout is simple and easy to navigate on small screens.";
+            }
+        }
+
+        /* Medium devices (tablets, 600px to 768px) */
+        @media only screen and (min-width: 601px) and (max-width: 768px) {
+            body {
+                background-color: #add8e6;
+                color: #222;
+            }
+            .content::before {
+                content: "Tablet View";
+                display: block;
+                font-size: 1.8em;
+                margin-bottom: 20px;
+                animation: fadeIn 0.5s ease-in;
+            }
+            .content p {
+                content: "This layout is perfect for tablets. It provides more space for content while maintaining readability.";
+            }
+        }
+
+        /* Large devices (desktops, 768px and up) */
+        @media only screen and (min-width: 769px) {
+            body {
+                background-color: #90ee90;
+                color: #111;
+            }
+            .content::before {
+                content: "Desktop View";
+                display: block;
+                font-size: 2em;
+                margin-bottom: 20px;
+                animation: fadeIn 0.5s ease-in;
+            }
+            .content p {
+                content: "Welcome to the desktop experience! Enjoy the full-width layout and enhanced features.";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Responsive Design Assignment</h1>
+        <p>Resize the browser window to see the changes!</p>
+    </div>
+</body>
+</html>
