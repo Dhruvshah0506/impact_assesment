@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6: Patterns with Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #0f0;
+            margin: 0;
+            overflow: auto;
+        }
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #000;
+        }
+        .matrix-rain span {
+            position: absolute;
+            top: -50px;
+            animation: fall linear infinite;
+            color: #0f0;
+            font-size: 20px;
+        }
+        @keyframes fall {
+            to { top: 100%; }
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .pattern {
+            font-family: monospace;
+            white-space: pre;
+            font-size: 20px;
+            text-align: center;
+            animation: glow 2s infinite alternate;
+            margin: 20px 0;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0; }
+            100% { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0; }
+        }
+        .intro {
+            font-size: 24px;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-rain" id="matrixRain"></div>
+    <div class="content">
+        <div class="intro">Assignment 6: Patterns with Animation</div>
+        <br>
+        <div class="pattern" id="diamond"></div>
+        <br>
+        <div class="pattern" id="hollow-square"></div>
+        <br>
+        <div class="pattern" id="right-triangle"></div>
+        <br>
+        <div class="pattern" id="number-pyramid"></div>
+        <br>
+        <div class="pattern" id="number-pyramid-increment"></div>
+    </div>
+
+    <script>
+        // Matrix Rain Animation
+        const matrixRain = document.getElementById("matrixRain");
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for (let i = 0; i < 100; i++) {
+            const span = document.createElement("span");
+            span.textContent = characters[Math.floor(Math.random() * characters.length)];
+            span.style.left = `${Math.random() * 100}%`;
+            span.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            span.style.animationDelay = `${Math.random() * 2}s`;
+            matrixRain.appendChild(span);
+        }
+
+        // Function to print patterns dynamically
+        function printPattern(elementId, pattern, delay = 100) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < pattern.length) {
+                    element.textContent += pattern[i];
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, delay);
+        }
+
+        // Patterns
+        const diamond = `
+    *    
+   * *   
+  *   *  
+ *     * 
+  *   *  
+   * *   
+    *    `;
+
+        const hollowSquare = `
+* * * * *
+*       *
+*       *
+*       *
+* * * * *`;
+
+        const rightTriangle = `
+*
+* *
+* * *
+* * * *
+* * * * *`;
+
+        const numberPyramid = `
+1
+1 1
+1 1 1
+1 1 1 1
+1 1 1 1 1`;
+
+        const numberPyramidIncrement = `
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5`;
+
+        // Print patterns dynamically
+        setTimeout(() => printPattern("diamond", diamond), 1000);
+        setTimeout(() => printPattern("hollow-square", hollowSquare), 3000);
+        setTimeout(() => printPattern("right-triangle", rightTriangle), 5000);
+        setTimeout(() => printPattern("number-pyramid", numberPyramid), 7000);
+        setTimeout(() => printPattern("number-pyramid-increment", numberPyramidIncrement), 9000);
+    </script>
+</body>
+</html>
