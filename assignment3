@@ -1,0 +1,185 @@
+# JavaScript Notes
+
+## 1. Introduction to JavaScript
+
+JavaScript is a **scripting language** used to create dynamic and interactive content on websites. It is a **client-side language** that runs directly in the browser.
+
+---
+
+## 2. Variables
+
+Variables are **containers** that store data values. In JavaScript, you can declare variables using:
+
+- `var` ➡️ Old way (not recommended)
+- `let` ➡️ Block scope (Recommended for changeable values)
+- `const` ➡️ Block scope (Recommended for fixed values)
+
+### Syntax Example:
+
+```javascript
+let name = "John";   // String
+const age = 25;       // Number
+```
+
+### Real-life Example:
+
+Imagine a **Water Bottle** 💧
+
+- The Bottle is the **Variable**
+- Water inside is the **Value**
+
+#### Additional Example:
+
+```javascript
+let city = "Mumbai";
+console.log(city);  // Output: Mumbai
+```
+
+---
+
+## 3. Data Types
+
+JavaScript has different types of data types:
+
+| Data Type | Example                 | Explanation                        |
+| --------- | ----------------------- | ---------------------------------- |
+| String    | "Hello"                 | Text data                          |
+| Number    | 45, 10.5                | Numbers                            |
+| Boolean   | true, false             | True or False                      |
+| Array     | [1, 2, 3]               | List of items                      |
+| Object    | {name: "John", age: 25} | Key-Value pairs                    |
+| Null      | null                    | Empty value                        |
+| Undefined | undefined               | Variable declared but not assigned |
+
+#### Example of Array:
+
+```javascript
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[1]);  // Output: Banana
+```
+
+#### Example of Object:
+
+```javascript
+let person = {name: "John", age: 30};
+console.log(person.name);  // Output: John
+```
+
+---
+
+## 4. Comments
+
+Comments are used to add **notes** inside the code which are not executed.
+
+### Types of Comments:
+
+- Single-line Comment ➡️ `// This is a comment`
+- Multi-line Comment ➡️ `/* This is a multi-line comment */`
+
+### Example:
+
+```javascript
+// This is a single-line comment
+let x = 10; /* This is a multi-line comment */
+```
+
+#### Importance of Comments:
+
+- Makes code readable
+- Helps in debugging
+- Used to explain complex logic
+
+---
+
+## 5. Identifier Rules
+
+Identifiers are the **names** used for variables, functions, or objects.
+
+✅ Rules:
+
+- Must start with **letter (a-z, A-Z)**, **\$**, or **\_**
+- Cannot start with a number
+- Case-sensitive
+- No special symbols (except `_` and `$`)
+- Reserved keywords are not allowed
+
+### Example:
+
+```javascript
+let myName = "Alice";  // Valid
+let _age = 25;        // Valid
+let 1name = "John";   // ❌ Invalid
+```
+
+#### Real-life Example:
+
+If you are naming your pets:
+
+- ✅ `dogName` - Valid
+- ✅ `_catName` - Valid
+- ❌ `1parrot` - Invalid
+
+---
+
+## 6. Operators and Their Precedence
+
+Operators perform operations on variables and values.
+
+### Types of Operators:
+
+| Operator   | Symbol         | Example | Explanation                 |                 |                    |
+| ---------- | -------------- | ------- | --------------------------- | --------------- | ------------------ |
+| Arithmetic | +, -, \*, /, % | 10 + 5  | Addition, Subtraction, etc. |                 |                    |
+| Assignment | =, +=, -=      | x += 5  | Assign values               |                 |                    |
+| Comparison | ==, ===, >, <  | x == y  | Compare two values          |                 |                    |
+| Logical    | &&,            |         | , !                         | x > 5 && x < 10 | Logical conditions |
+| Unary      | ++, --         | x++     | Increment, Decrement        |                 |                    |
+
+---
+
+### Operator Precedence (Execution Order):
+
+| Precedence | Operator | Example | Explanation                 |
+| ---------- | -------- | ------- | --------------------------- |
+| 1          | ()       | (2 + 3) | Brackets executed first     |
+| 2          | ++, --   | x++     | Increment/Decrement         |
+| 3          | \*, /, % | 10 \* 2 | Multiplication and Division |
+| 4          | +, -     | 5 + 3   | Addition and Subtraction    |
+| 5          | =        | x = 10  | Assignment                  |
+
+---
+
+### Example with Explanation:
+
+```javascript
+let result = (10 + 5) * 2;
+console.log(result);  // Output: 30
+```
+
+🔑 Explanation:
+
+1. (10 + 5) ➡️ 15
+2. 15 \* 2 ➡️ 30
+
+#### Example of Logical Operator:
+
+```javascript
+let age = 20;
+if (age > 18 && age < 30) {
+  console.log("Eligible");  // Output: Eligible
+}
+```
+
+---
+
+### Summary
+
+- Always use `let` and `const`
+- Use comments to make code readable
+- Understand data types before using them
+- Operators have different precedence, always use `()` to control execution order
+
+---
+
+✅ This file contains detailed notes with examples and symbols.
+
